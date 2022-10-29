@@ -59,9 +59,43 @@ body.dark {
   transform: scale(1.1);
 }
 
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 10%;
+}
+
+.filter__form {
+  background: var(--color-bg-secondary);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+.filter__form input {
+  margin-left: 1rem;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+.filter__select {
+  
+}
+
 
 @media (max-width: 576px) {
   .topbar {
     padding: 1rem 5%;
+  }
+  .filter {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #2b3743;
+    padding: 1rem 5%;
+  }
+  .filter__form {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
