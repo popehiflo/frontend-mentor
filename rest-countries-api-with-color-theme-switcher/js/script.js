@@ -17,7 +17,7 @@ btnTheme.addEventListener('click', () => {
   }
 });
 
-// API 
+// Call to API (List ALL)
 const listCountries = document.getElementById('countries')
 
 document.addEventListener("DOMContentLoaded", e => {
@@ -30,6 +30,7 @@ const fetchData = async () => {
         const data = await res.json()
         console.log(data)
         countries(data)
+        formFilterClient(data)
         
     } catch (error) {
         console.log(error)
@@ -64,4 +65,24 @@ const countries = data => {
         `
     });
     listCountries.innerHTML = elements
+}
+
+
+// List Filtered from Filter form
+const formFilter = document.getElementById('formFilter');
+const inputFilter = document.getElementById('inputFilter');
+
+const formFilterClient = data => {
+  formFilter.addEventListener('keyup', e => {
+        e.preventDefault()
+        const letraCliente = inputFilter.value.toLowerCase()
+        // console.log(letraCliente)
+        const filteredArray = data.filter(item => {
+            const letraApi = item.name.toLowerCase()
+            if (letraApi.indexOf(letraCliente) !== -1) {
+                return item
+            }
+        })
+        countries(filteredArray)
+    })
 }
