@@ -16,3 +16,22 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
 }
+
+body {
+  --color-bg-primary: #bebebe;
+  --color-bg-secondary: #ffffff;
+  --color-text: #000000;
+  color: var(--color-text);
+  background: var(--color-bg-primary);
+}
+
+body.dark {
+  --color-bg-primary: #212e37;
+  --color-bg-secondary: #2b3743;
+  --color-text: #ffffff;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+}
